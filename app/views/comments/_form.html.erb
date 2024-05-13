@@ -1,13 +1,11 @@
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
+  <p class="mb-3">
+    <%= form.text_field :commenter, class: "form-control", placeholder: "Name" %>
+  </p>
+  <p class="mb-3">
+    <%= form.text_area :body, class: "form-control", placeholder: "Message" %>
   </p>
   <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-secondary" %>
   </p>
 <% end %>

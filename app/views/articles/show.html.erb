@@ -1,17 +1,25 @@
-<h1><%= @article.title %></h1>
+<div class="mt-4 p-5 bg-secondary text-white rounded">
+  <h1><%= @article.title %></h1>
 
-<p><%= @article.body %></p>
-
-<ul>
-    <li><%= link_to "Edit", edit_article_path(@article) %></li>
-    <li><%= link_to "Destroy", article_path(@article), data: {
+  <p><%= @article.body %></p>
+</div>
+<br/>
+<ul class="list-group">
+    <li><%= link_to "Edit", edit_article_path(@article), class: "btn btn-dark" %></li>
+    <br/>
+    <li><%= link_to "Delete", article_path(@article), class: "btn btn-dark", 
+                    data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></li>
 </ul>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
 
-<h2>Add a comment:</h2>
+<hr>
+
+<h2><u>Comments</u></h2>
+<%= render @article.comments %>
+<br/>
+
+<h3>Add a comment:</h3>
 <%= render 'comments/form' %>
