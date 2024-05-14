@@ -1,13 +1,13 @@
-<div class="mt-4 p-5 bg-secondary text-white rounded">
+<div class="mt-4 p-5 bg-tertiary text-dark rounded border">
   <h1><%= @article.title %></h1>
 
   <p><%= @article.body %></p>
 </div>
 <br/>
 <ul class="list-group">
-    <li><%= link_to "Edit", edit_article_path(@article), class: "btn btn-dark" %></li>
+    <li><%= link_to "Edit", edit_article_path(@article), class: "btn btn-secondary" %></li>
     <br/>
-    <li><%= link_to "Delete", article_path(@article), class: "btn btn-dark", 
+    <li><%= link_to "Delete", article_path(@article), class: "btn btn-secondary", 
                     data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
